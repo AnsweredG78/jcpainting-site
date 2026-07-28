@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Painting — Chicago Painting &amp; Renovation | 20+ Years</title>
+<meta name="description" content="JC Painting — interior &amp; exterior painting, drywall, plaster, and full renovation finish work across the Chicago area. 20+ years, thousands of homes. Se habla español.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2A44;
+    --ink-soft:#33455F;
+    --brick:#8A3A30;
+    --brick-deep:#6E2C24;
+    --sky:#6FA3C4;
+    --sky-pale:#DCE9EF;
+    --paper:#F7F3EC;
+    --paper-deep:#EFE8DA;
+    --stone:#B9AC98;
+    --white:#FFFDF9;
+    --radius: 2px;
+    --maxw: 1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  body{
+    margin:0;
+    overflow-x:hidden;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--brick);
+  }
+  html[data-lang="en"] .es{display:none;}
+  html[data-lang="es"] .en{display:none;}
+
+  .rule{width:64px; height:4px; border-radius:2px; background:var(--brick); margin:22px 0; position:relative;}
+  .rule::after{content:""; position:absolute; left:76px; top:0; width:14px; height:4px; border-radius:2px; background:var(--sky);}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,243,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(27,42,68,0.08);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .wordmark{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    text-decoration:none;
+    display:flex; align-items:baseline; gap:6px;
+  }
+  .wordmark span{color:var(--brick);}
+  .nav-right{display:flex; align-items:center; gap:18px;}
+  .lang-toggle{
+    display:flex; border:1px solid var(--ink); border-radius:20px; overflow:hidden;
+    font-size:12.5px; font-weight:600; letter-spacing:0.03em;
+  }
+  .lang-toggle button{
+    border:none; background:transparent; padding:6px 13px; cursor:pointer;
+    font-family:'Work Sans',sans-serif; color:var(--ink);
+  }
+  .lang-toggle button.active{background:var(--ink); color:var(--white);}
+  .call-pill{
+    background:var(--brick); color:var(--white);
+    padding:10px 18px; border-radius:24px;
+    text-decoration:none; font-weight:600; font-size:14.5px;
+    white-space:nowrap;
+    transition:background .15s ease;
+  }
+  .call-pill:hover{background:var(--brick-deep);}
+  @media(max-width:640px){
+    .nav-right{gap:10px;}
+    .call-pill{padding:9px 14px; font-size:13px;}
+  }
+  @media(max-width:400px){
+    .nav{padding:12px 16px; gap:8px; flex-wrap:wrap;}
+    .wordmark{font-size:19px;}
+    .nav-right{gap:8px;}
+    .lang-toggle button{padding:5px 10px; font-size:12px;}
+    .call-pill{padding:8px 12px; font-size:12.5px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--ink); color:var(--white); padding:64px 0 0 0; overflow:hidden;}
+  .hero-inner{display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;}
+  .hero h1{color:var(--white); font-size:clamp(34px, 4.4vw, 58px); margin-top:14px;}
+  .hero h1 em{font-style:normal; color:var(--sky);}
+  .hero-sub{color:rgba(255,253,249,0.82); font-size:18px; max-width:520px; margin-top:20px;}
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:26px;
+    font-weight:600; font-size:15px; text-decoration:none; font-family:'Work Sans',sans-serif; border:none; cursor:pointer;}
+  .btn-primary{background:var(--brick); color:var(--white);}
+  .btn-primary:hover{background:var(--brick-deep);}
+  .btn-ghost{border:1px solid rgba(255,253,249,0.4); color:var(--white); background:transparent;}
+  .btn-ghost:hover{border-color:var(--white);}
+  .hero-figure{position:relative; align-self:stretch;}
+  .hero-figure img{width:100%; height:100%; object-fit:cover; min-height:420px;}
+  .hero-figure::after{content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(27,42,68,0) 55%, rgba(27,42,68,0.35) 100%);}
+  .hero-caption{position:absolute; left:20px; bottom:18px; z-index:2;
+    background:rgba(27,42,68,0.75); color:var(--white); padding:8px 14px; font-size:13px;
+    border-radius:3px; font-weight:500;}
+  @media(max-width:760px){
+    .hero-inner{grid-template-columns:1fr; gap:26px;}
+    .hero-figure{align-self:auto;}
+    .hero-figure img{min-height:0; height:260px;}
+  }
+
+  .trust{background:var(--ink); border-top:1px solid rgba(255,253,249,0.14); padding:26px 0 42px 0;}
+  .trust-row{display:flex; flex-wrap:wrap; gap:36px; color:rgba(255,253,249,0.88);}
+  .trust-item{display:flex; align-items:baseline; gap:10px;}
+  .trust-item .num{font-family:'Fraunces',serif; font-size:30px; font-weight:600; color:var(--sky);}
+  .trust-item .lbl{font-size:14px; max-width:150px; line-height:1.3;}
+
+  section{padding:78px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(28px,3vw,40px); margin-top:10px;}
+  .section-head p{margin-top:14px; color:var(--ink-soft); font-size:16.5px;}
+
+  .services{background:var(--paper);}
+  .service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:rgba(27,42,68,0.14); border:1px solid rgba(27,42,68,0.14);}
+  .service-card{background:var(--paper); padding:30px 26px;}
+  .service-card .idx{font-family:'Fraunces',serif; color:var(--stone); font-size:15px; font-weight:600;}
+  .service-card h3{font-size:19px; margin-top:14px;}
+  .service-card p{font-size:14.5px; color:var(--ink-soft); margin-top:8px; margin-bottom:0;}
+  @media(max-width:900px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.service-grid{grid-template-columns:1fr;}}
+
+  /* ---------- WORK / FILMSTRIP ---------- */
+  .work{background:var(--paper-deep); overflow:hidden;}
+  .work-controls{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+  .fs-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--ink); background:transparent; color:var(--ink);
+    padding:9px 18px; border-radius:22px; font-family:'Work Sans',sans-serif;
+    font-weight:600; font-size:13.5px; cursor:pointer;
+  }
+  .fs-btn:hover{background:var(--ink); color:var(--white);}
+  .fs-hint{font-size:13px; color:var(--ink-soft);}
+  .filmstrip{position:relative; width:100%; overflow:hidden;}
+  .filmstrip::before, .filmstrip::after{
+    content:""; position:absolute; top:0; bottom:0; width:48px; z-index:2; pointer-events:none;
+  }
+  .filmstrip::before{left:0; background:linear-gradient(90deg, var(--paper-deep), rgba(239,232,218,0));}
+  .filmstrip::after{right:0; background:linear-gradient(270deg, var(--paper-deep), rgba(239,232,218,0));}
+  .fs-track{
+    display:flex; gap:14px; width:max-content;
+    animation:scrollstrip 46s linear infinite;
+    will-change:transform; transform:translateZ(0); backface-visibility:hidden;
+  }
+  .filmstrip.paused .fs-track{animation-play-state:paused;}
+  @keyframes scrollstrip{from{transform:translate3d(0,0,0);} to{transform:translate3d(-50%,0,0);}}
+  .fs-item{
+    display:flex; flex-direction:column;
+    flex:0 0 auto; width:280px;
+    border-radius:2px; overflow:hidden; cursor:pointer; border:1px solid rgba(27,42,68,0.12);
+    background:var(--white); text-align:left;
+  }
+  .fs-item .thumb{width:100%; height:186px; overflow:hidden; background:var(--stone);}
+  .fs-item .thumb img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;}
+  .fs-item:hover .thumb img{transform:scale(1.05);}
+  .fs-item .cap{
+    background:var(--white); color:var(--ink);
+    font-size:13px; font-weight:600; line-height:1.3;
+    padding:11px 13px 12px 13px;
+    border-top:3px solid var(--brick);
+  }
+  @media(max-width:640px){
+    .fs-item{width:220px;}
+    .fs-item .thumb{height:150px;}
+  }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(15,20,30,0.92);
+    display:none; align-items:center; justify-content:center;
+    z-index:200; padding:40px 20px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(1100px, 92vw); max-height:80vh; object-fit:contain; border-radius:2px;}
+  .lightbox .lb-cap{color:var(--white); text-align:center; margin-top:14px; font-size:14.5px;}
+  .lb-inner{display:flex; flex-direction:column; align-items:center; max-width:100%;}
+  .lb-close, .lb-nav{
+    position:absolute; background:rgba(255,253,249,0.12); color:var(--white); border:none;
+    border-radius:50%; width:44px; height:44px; font-size:20px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lb-close:hover, .lb-nav:hover{background:rgba(255,253,249,0.24);}
+  .lb-close{top:22px; right:22px;}
+  .lb-prev{left:18px; top:50%; transform:translateY(-50%);}
+  .lb-next{right:18px; top:50%; transform:translateY(-50%);}
+  @media(max-width:640px){
+    .lb-prev,.lb-next{width:38px; height:38px;}
+  }
+
+  .about{background:var(--ink); color:var(--white);}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+  .about h2{color:var(--white); font-size:clamp(28px,3vw,38px);}
+  .about p{color:rgba(255,253,249,0.82); font-size:16.5px;}
+  .about-figure{border-radius:2px; overflow:hidden;}
+  .about-figure img{width:100%;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr; gap:32px;} .about-figure{order:-1;}}
+
+  .area{background:var(--paper);}
+  .area-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  .area-list{list-style:none; margin:22px 0 0 0; padding:0;}
+  .area-list li{padding:12px 0; border-bottom:1px solid rgba(27,42,68,0.12);
+    display:flex; justify-content:space-between; font-size:15px;}
+  .area-list li .tag{color:var(--brick); font-weight:600; font-size:12.5px; text-transform:uppercase; letter-spacing:.06em;}
+  @media(max-width:860px){.area-grid{grid-template-columns:1fr;}}
+
+  .contact{background:var(--brick); color:var(--white);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact h2{color:var(--white);}
+  .contact-sub{color:rgba(255,253,249,0.88); margin-top:14px; font-size:16.5px;}
+  .contact .btn-primary{background:var(--ink);}
+  .contact .btn-primary:hover{background:#111d33;}
+  .contact-phone{font-family:'Fraunces',serif; font-size:34px; font-weight:600; margin-top:8px; display:block;
+    color:var(--white); text-decoration:none;}
+  form.leadform{background:var(--white); color:var(--ink); padding:28px; border-radius:3px;}
+  form.leadform label{display:block; font-size:13px; font-weight:600; margin-bottom:6px; margin-top:16px;
+    text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft);}
+  form.leadform label:first-child{margin-top:0;}
+  form.leadform input, form.leadform textarea{width:100%; padding:11px 12px; border:1px solid rgba(27,42,68,0.25);
+    border-radius:2px; font-family:'Work Sans',sans-serif; font-size:16px; background:var(--paper);}
+  form.leadform textarea{resize:vertical; min-height:90px;}
+  form.leadform button{margin-top:20px; width:100%; border:none; cursor:pointer;
+    background:var(--brick); color:var(--white); padding:13px; border-radius:26px;
+    font-weight:600; font-size:15px; font-family:'Work Sans',sans-serif;}
+  form.leadform button:hover{background:var(--brick-deep);}
+  .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:12px; line-height:1.5;}
+  .form-note a{color:var(--brick); text-decoration:underline;}
+  .consent-row{
+    display:flex; align-items:flex-start; gap:9px;
+    margin-top:18px; font-size:12.5px; color:var(--ink-soft); line-height:1.45;
+    text-transform:none; font-weight:400; letter-spacing:0;
+    cursor:pointer;
+  }
+  .consent-row input[type="checkbox"]{
+    margin-top:2px; width:16px; height:16px; flex:0 0 auto; accent-color:var(--brick);
+  }
+
+  footer{background:var(--ink); color:rgba(255,253,249,0.7); padding:34px 0; font-size:13.5px;}
+  .foot-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; align-items:center;}
+  footer a{color:var(--sky); text-decoration:none;}
+
+  ::selection{background:var(--sky); color:var(--ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    .fs-track{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="wordmark">JC <span>Painting</span></a>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" class="active">EN</button>
+        <button type="button" data-set-lang="es">ES</button>
+      </div>
+      <a class="call-pill" href="tel:17738307277">
+        <span class="en">Call (773) 830-7277</span>
+        <span class="es">Llama (773) 830-7277</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">
+          <span class="en">Painting &amp; renovation finish work · Chicago area</span>
+          <span class="es">Pintura y trabajo de acabados en remodelación · área de Chicago</span>
+        </span>
+        <h1>
+          <span class="en">Twenty years of careful work, still <em>standing.</em></span>
+          <span class="es">Veinte años de trabajo cuidadoso que <em>perdura.</em></span>
+        </h1>
+        <div class="rule"></div>
+        <p class="hero-sub">
+          <span class="en">JC Painting has repainted, replastered, and finished thousands of homes across Chicagoland — from a single accent wall to a full gut renovation. Free estimates, done right the first time.</span>
+          <span class="es">JC Painting ha pintado, resanado y terminado miles de casas en el área de Chicago — desde una sola pared hasta una remodelación completa. Estimados gratis, hecho bien desde la primera vez.</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="tel:17738307277">
+            <span class="en">Call for a free estimate</span>
+            <span class="es">Llama para un estimado gratis</span>
+          </a>
+          <a class="btn btn-ghost" href="#work">
+            <span class="en">See the work</span>
+            <span class="es">Ver el trabajo</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <img src="images/hero.jpg" alt="JC Painting crew finishing custom wall trim on site">
+        <div class="hero-caption">
+          <span class="en">Custom cabinetry &amp; built-in millwork</span>
+          <span class="es">Gabinetes y muebles empotrados a medida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap">
+      <div class="trust-row">
+        <div class="trust-item"><span class="num">20+</span><span class="lbl"><span class="en">years in business</span><span class="es">años de experiencia</span></span></div>
+        <div class="trust-item"><span class="num">1,000s</span><span class="lbl"><span class="en">of homes painted &amp; finished</span><span class="es">de casas pintadas y terminadas</span></span></div>
+        <div class="trust-item"><span class="num">100%</span><span class="lbl"><span class="en">owner-involved, every job</span><span class="es">el dueño está en cada trabajo</span></span></div>
+        <div class="trust-item"><span class="num">Free</span><span class="lbl"><span class="en">on-site estimates</span><span class="es">estimados en el sitio</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="en">What we do</span><span class="es">Lo que hacemos</span></span>
+      <h2><span class="en">Painting is the trade. Finishing is the craft.</span><span class="es">Pintura es el oficio. El acabado es el arte.</span></h2>
+      <p><span class="en">Most jobs start with paint and end up covering the whole room — drywall repair, plaster, trim, and the small details that make a space feel finished.</span><span class="es">La mayoría de los trabajos empiezan con pintura y terminan cubriendo todo el cuarto — reparación de drywall, resane, molduras y los detalles que hacen que un espacio se sienta terminado.</span></p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="idx">01</span>
+        <h3><span class="en">Interior Painting</span><span class="es">Pintura Interior</span></h3>
+        <p><span class="en">Full rooms, accent walls, cabinetry, and trim — clean lines, proper prep.</span><span class="es">Cuartos completos, paredes de acento, gabinetes y molduras — líneas limpias, buena preparación.</span></p>
+      </div>
+      <div class="service-card">
+        <span class="idx">02</span>
+        <h3><span class="en">Exterior Painting</span><span class="es">Pintura Exterior</span></h3>
+        <p><span class="en">Siding, trim, and doors that hold up through a Chicago winter.</span><span class="es">Fachadas, molduras y puertas que aguantan un invierno de Chicago.</span></p>
+      </div>
+      <div class="service-card">
+        <span class="idx">03</span>
+        <h3><span class="en">Drywall &amp; Plaster</span><span class="es">Drywall y Resane</span></h3>
+        <p><span class="en">Repairs, skim coats, and new wall paneling built to match your home.</span><span class="es">Reparaciones, resane fino y paneles nuevos hechos a la medida de tu casa.</span></p>
+      </div>
+      <div class="service-card">
+        <span class="idx">04</span>
+        <h3><span class="en">Renovation Finishing</span><span class="es">Acabados de Remodelación</span></h3>
+        <p><span class="en">Kitchens, baths, and full remodels — the last step that makes it look right.</span><span class="es">Cocinas, baños y remodelaciones completas — el último paso que lo deja perfecto.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="en">Recent work</span><span class="es">Trabajos recientes</span></span>
+      <h2><span class="en">From the first coat to the final walkthrough.</span><span class="es">Desde la primera mano hasta la entrega final.</span></h2>
+    </div>
+    <div class="work-controls">
+      <button type="button" class="fs-btn" id="fsToggle">
+        <span id="fsToggleIcon">&#10074;&#10074;</span>
+        <span class="en" id="fsToggleLabelEn">Pause</span><span class="es" id="fsToggleLabelEs">Pausar</span>
+      </button>
+      <span class="fs-hint"><span class="en">Click any photo to expand it</span><span class="es">Haz clic en una foto para ampliarla</span></span>
+    </div>
+    <div class="filmstrip" id="filmstrip">
+      <div class="fs-track" id="fsTrack"><!-- items injected by JS, duplicated for seamless loop --></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-inner">
+    <img id="lbImg" src="" alt="">
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+</div>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--sky);"><span class="en">About</span><span class="es">Acerca de</span></span>
+        <h2><span class="en">Twenty years, one owner, every job.</span><span class="es">Veinte años, un solo dueño, en cada trabajo.</span></h2>
+        <div class="rule"></div>
+        <p><span class="en">JC Painting has been repainting and renovating homes across the Chicago area for more than two decades — thousands of jobs, from a single bedroom to a full gut remodel. Every project gets the owner's direct attention, from the first estimate to the final walkthrough.</span><span class="es">JC Painting lleva más de veinte años pintando y remodelando casas en el área de Chicago — miles de trabajos, desde una sola recámara hasta una remodelación completa. Cada proyecto tiene la atención directa del dueño, desde el primer estimado hasta la entrega final.</span></p>
+        <p><span class="en">No job too small, no detail skipped.</span><span class="es">Ningún trabajo es demasiado pequeño, ningún detalle se pasa por alto.</span></p>
+      </div>
+      <div class="about-figure">
+        <img src="images/about-van.jpg" alt="JC Painting service van">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="area-grid">
+      <div>
+        <span class="eyebrow"><span class="en">Service area</span><span class="es">Área de servicio</span></span>
+        <h2><span class="en">Based in the suburbs, working all over Chicagoland.</span><span class="es">Con base en los suburbios, trabajando en todo Chicagoland.</span></h2>
+        <p style="margin-top:14px; color:var(--ink-soft);">
+          <span class="en">JC Painting takes on projects throughout the greater Chicago area, with most current work concentrated in the northern and western suburbs. City projects welcome — just give us a call to check availability for your neighborhood.</span>
+          <span class="es">JC Painting toma proyectos en toda el área de Chicago, con la mayoría del trabajo actual concentrado en los suburbios del norte y del oeste. Proyectos en la ciudad son bienvenidos — llámanos para confirmar disponibilidad en tu zona.</span>
+        </p>
+      </div>
+      <ul class="area-list">
+        <li><span><span class="en">Northern suburbs</span><span class="es">Suburbios del norte</span></span><span class="tag"><span class="en">Primary area</span><span class="es">Área principal</span></span></li>
+        <li><span><span class="en">Western suburbs</span><span class="es">Suburbios del oeste</span></span><span class="tag"><span class="en">Primary area</span><span class="es">Área principal</span></span></li>
+        <li><span><span class="en">Chicago city</span><span class="es">Ciudad de Chicago</span></span><span class="tag"><span class="en">Call to confirm</span><span class="es">Llamar para confirmar</span></span></li>
+        <li><span><span class="en">Rest of Chicagoland</span><span class="es">Resto de Chicagoland</span></span><span class="tag"><span class="en">Call to confirm</span><span class="es">Llamar para confirmar</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--ink);"><span class="en">Get a free estimate</span><span class="es">Pide un estimado gratis</span></span>
+        <h2><span class="en">Let's talk about your project.</span><span class="es">Hablemos de tu proyecto.</span></h2>
+        <p class="contact-sub"><span class="en">Fastest way to reach us is by phone. Se habla español.</span><span class="es">La forma más rápida de contactarnos es por teléfono. Se habla español.</span></p>
+        <a class="contact-phone" href="tel:17738307277">(773) 830-7277</a>
+        <div class="hero-cta" style="margin-top:26px;">
+          <a class="btn btn-primary" href="tel:17738307277"><span class="en">Call now</span><span class="es">Llama ahora</span></a>
+        </div>
+      </div>
+      <form class="leadform" action="#" method="POST">
+        <!-- TODO: connect to a live form endpoint (Formspree or GHL form) before go-live -->
+        <label for="name"><span class="en">Name</span><span class="es">Nombre</span></label>
+        <input type="text" id="name" name="name" required>
+        <label for="phone"><span class="en">Phone</span><span class="es">Teléfono</span></label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="details"><span class="en">What do you need done?</span><span class="es">¿Qué necesitas hacer?</span></label>
+        <textarea id="details" name="details" placeholder="Interior painting, kitchen remodel, drywall repair..."></textarea>
+
+        <label class="consent-row">
+          <input type="checkbox" id="smsConsent" name="smsConsent">
+          <span class="en">I agree to receive text messages from JC Painting about my project. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help.</span>
+          <span class="es">Acepto recibir mensajes de texto de JC Painting sobre mi proyecto. Pueden aplicar tarifas de mensajes y datos. La frecuencia de mensajes varía. Responde STOP para cancelar, HELP para ayuda.</span>
+        </label>
+
+        <button type="submit"><span class="en">Request estimate</span><span class="es">Pedir estimado</span></button>
+        <p class="form-note">
+          <span class="en">We'll get back to you shortly — usually the same day. Submitting this form does not obligate you to hire JC Painting. By submitting, you agree to be contacted by phone, text, or email about your request. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Use</a>.</span>
+          <span class="es">Te responderemos pronto — normalmente el mismo día. Enviar este formulario no te obliga a contratar a JC Painting. Al enviarlo, aceptas que te contactemos por teléfono, texto o correo electrónico sobre tu solicitud. Consulta nuestra <a href="privacy.html">Política de Privacidad</a> y <a href="terms.html">Términos de Uso</a>.</span>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <strong style="color:var(--white); font-family:'Fraunces',serif;">JC Painting</strong>
+        <span style="margin-left:10px;"><span class="en">Chicago area</span><span class="es">Área de Chicago</span></span>
+      </div>
+      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+        <a href="privacy.html"><span class="en">Privacy Policy</span><span class="es">Política de Privacidad</span></a>
+        <a href="terms.html"><span class="en">Terms of Use</span><span class="es">Términos de Uso</span></a>
+        <a href="tel:17738307277">(773) 830-7277</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- language toggle ----------
+  const buttons = document.querySelectorAll('[data-set-lang]');
+  function setLang(lang){
+    document.documentElement.setAttribute('data-lang', lang);
+    buttons.forEach(b => b.classList.toggle('active', b.getAttribute('data-set-lang') === lang));
+    try { localStorage.setItem('jcp-lang', lang); } catch(e){}
+  }
+  buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-set-lang'))));
+  try { const saved = localStorage.getItem('jcp-lang'); if(saved) setLang(saved); } catch(e){}
+
+  // ---------- gallery data ----------
+  const GALLERY = [
+    { src: "images/thumb-kitchenfull.jpg",full: "images/full-kitchenfull.jpg",en: "Kitchen finish work", es: "Acabados de cocina" },
+    { src: "images/thumb-tub.jpg",        full: "images/full-tub.jpg",        en: "Marble tile tub surround", es: "Tina con mosaico de mármol" },
+    { src: "images/thumb-cabinet.jpg",    full: "images/full-cabinet.jpg",    en: "Custom cabinetry detail", es: "Detalle de gabinetes a medida" },
+    { src: "images/thumb-fireplace1.jpg", full: "images/full-fireplace1.jpg", en: "Stone fireplace surround", es: "Chimenea con piedra natural" },
+    { src: "images/thumb-shower.jpg",     full: "images/full-shower.jpg",     en: "Bath remodel", es: "Remodelación de baño" },
+    { src: "images/thumb-powder.jpg",     full: "images/full-powder.jpg",     en: "Powder room paneling", es: "Panelería en baño de visitas" },
+    { src: "images/thumb-dining.jpg",     full: "images/full-dining.jpg",     en: "Kitchen dining nook", es: "Rincón de desayuno en cocina" },
+    { src: "images/thumb-plaster.jpg",    full: "images/full-plaster.jpg",    en: "Fireplace tile & plaster work", es: "Trabajo de resane y mosaico en chimenea" },
+    { src: "images/thumb-drywall.jpg",    full: "images/full-drywall.jpg",    en: "Drywall finishing in progress", es: "Acabado de drywall en proceso" },
+    { src: "images/thumb-mantle.jpg",     full: "images/full-mantle.jpg",     en: "Mantle installation, mid-project", es: "Instalación de repisa, a mitad de obra" },
+    { src: "images/thumb-fireplace2.jpg", full: "images/full-fireplace2.jpg", en: "Finished fireplace surround", es: "Chimenea terminada" }
+  ];
+
+  const track = document.getElementById('fsTrack');
+  function buildItems(){
+    let html = '';
+    // duplicate list twice for seamless CSS loop
+    for(let dup = 0; dup < 2; dup++){
+      GALLERY.forEach((item, i) => {
+        html += `<button class="fs-item" type="button" data-index="${i}" aria-label="${item.en}">
+          <span class="thumb"><img src="${item.src}" alt="${item.en}" loading="lazy"></span>
+          <span class="cap"><span class="en">${item.en}</span><span class="es">${item.es}</span></span>
+        </button>`;
+      });
+    }
+    track.innerHTML = html;
+  }
+  buildItems();
+
+  // ---------- play/pause ----------
+  const filmstrip = document.getElementById('filmstrip');
+  const fsToggle = document.getElementById('fsToggle');
+  const fsIcon = document.getElementById('fsToggleIcon');
+  let isPaused = false;
+  function applyPauseState(){
+    filmstrip.classList.toggle('paused', isPaused);
+    fsIcon.innerHTML = isPaused ? '&#9654;' : '&#10074;&#10074;';
+    document.getElementById('fsToggleLabelEn').textContent = isPaused ? 'Play' : 'Pause';
+    document.getElementById('fsToggleLabelEs').textContent = isPaused ? 'Reanudar' : 'Pausar';
+  }
+  fsToggle.addEventListener('click', () => { isPaused = !isPaused; applyPauseState(); });
+  filmstrip.addEventListener('mouseenter', () => filmstrip.classList.add('paused'));
+  filmstrip.addEventListener('mouseleave', () => { if(!isPaused && inView) filmstrip.classList.remove('paused'); });
+
+  // pause animation entirely when off-screen to save CPU/battery on mobile
+  let inView = true;
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        inView = entry.isIntersecting;
+        filmstrip.classList.toggle('paused', !inView || isPaused);
+      });
+    }, { threshold: 0.01 });
+    io.observe(filmstrip);
+  }
+
+  // ---------- lightbox ----------
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  let currentIndex = 0;
+
+  function openLightbox(index){
+    currentIndex = index;
+    const item = GALLERY[index];
+    lbImg.src = item.full;
+    lbImg.alt = item.en;
+    const lang = document.documentElement.getAttribute('data-lang');
+    lbCap.textContent = lang === 'es' ? item.es : item.en;
+    lightbox.classList.add('open');
+    filmstrip.classList.add('paused');
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    if(!isPaused && inView) filmstrip.classList.remove('paused');
+  }
+  function showRelative(delta){
+    currentIndex = (currentIndex + delta + GALLERY.length) % GALLERY.length;
+    openLightbox(currentIndex);
+  }
+
+  track.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fs-item');
+    if(!btn) return;
+    openLightbox(parseInt(btn.getAttribute('data-index'), 10));
+  });
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => showRelative(-1));
+  document.getElementById('lbNext').addEventListener('click', () => showRelative(1));
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showRelative(-1);
+    if(e.key === 'ArrowRight') showRelative(1);
+  });
+</script>
+
+</body>
+</html>
