@@ -468,8 +468,8 @@
           <a class="btn btn-primary" href="tel:17738307277"><span class="en">Call now</span><span class="es">Llama ahora</span></a>
         </div>
       </div>
-      <form class="leadform" action="#" method="POST">
-        <!-- TODO: connect to a live form endpoint (Formspree or GHL form) before go-live -->
+      <form class="leadform" action="https://formspree.io/f/mvkgzgnw" method="POST">
+        <input type="hidden" name="_subject" value="New lead — JC Painting Inc website">
         <label for="name"><span class="en">Name</span><span class="es">Nombre</span></label>
         <input type="text" id="name" name="name" required>
         <label for="phone"><span class="en">Phone</span><span class="es">Teléfono</span></label>
@@ -478,9 +478,15 @@
         <textarea id="details" name="details" placeholder="Interior painting, kitchen remodel, drywall repair..."></textarea>
 
         <label class="consent-row">
-          <input type="checkbox" id="smsConsent" name="smsConsent">
-          <span class="en">I agree to receive text messages from JC Painting about my project. Msg &amp; data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help.</span>
-          <span class="es">Acepto recibir mensajes de texto de JC Painting sobre mi proyecto. Pueden aplicar tarifas de mensajes y datos. La frecuencia de mensajes varía. Responde STOP para cancelar, HELP para ayuda.</span>
+          <input type="checkbox" id="smsConsentTransactional" name="smsConsentTransactional">
+          <span class="en">I consent to receive transactional messages from JC Painting Inc about my project (appointment updates, estimate follow-ups, and service notifications) at the phone number provided. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</span>
+          <span class="es">Acepto recibir mensajes transaccionales de JC Painting Inc sobre mi proyecto (actualizaciones de citas, seguimiento de estimados y notificaciones de servicio) al número de teléfono proporcionado. La frecuencia de mensajes varía. Pueden aplicar tarifas de mensajes y datos. Responde STOP para cancelar, HELP para ayuda.</span>
+        </label>
+
+        <label class="consent-row">
+          <input type="checkbox" id="smsConsentMarketing" name="smsConsentMarketing">
+          <span class="en">I consent to receive marketing and promotional messages from JC Painting Inc at the phone number provided. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.</span>
+          <span class="es">Acepto recibir mensajes de marketing y promocionales de JC Painting Inc al número de teléfono proporcionado. La frecuencia de mensajes varía. Pueden aplicar tarifas de mensajes y datos. Responde STOP para cancelar, HELP para ayuda.</span>
         </label>
 
         <button type="submit"><span class="en">Request estimate</span><span class="es">Pedir estimado</span></button>
