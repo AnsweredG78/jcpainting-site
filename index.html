@@ -101,6 +101,9 @@
     transition:background .15s ease;
   }
   .call-pill:hover{background:var(--brick-deep);}
+  .nav-link{color:var(--ink); text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;}
+  .nav-link:hover{color:var(--brick);}
+  @media(max-width:760px){.nav-link{display:none;}}
   @media(max-width:640px){
     .nav-right{gap:10px;}
     .call-pill{padding:9px 14px; font-size:13px;}
@@ -227,6 +230,30 @@
     .lb-prev,.lb-next{width:38px; height:38px;}
   }
 
+  /* ---------- REVIEWS ---------- */
+  .reviews{background:var(--paper);}
+  [hidden]{display:none !important;}
+  .reviews-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:40px;}
+  .reviews-head .section-head{margin-bottom:0;}
+  .btn-outline{border:1px solid var(--ink); color:var(--ink); background:transparent;}
+  .btn-outline:hover{background:var(--ink); color:var(--white);}
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media(max-width:960px){.review-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:620px){.review-grid{grid-template-columns:1fr;}}
+  .review{
+    background:var(--white); border:1px solid rgba(27,42,68,0.12); border-radius:2px;
+    padding:26px 26px 22px 26px; display:flex; flex-direction:column; gap:14px; min-width:0;
+  }
+  .review .stars{color:var(--brick); font-size:16px; letter-spacing:2px; line-height:1;}
+  .review .stars .off{color:var(--stone);}
+  .review .mark{font-family:'Fraunces',serif; font-size:56px; line-height:.6; height:26px; color:var(--brick);}
+  .review blockquote{margin:0; font-family:'Fraunces',serif; font-size:16.5px; line-height:1.5; color:var(--ink);}
+  .review .who{margin-top:auto; padding-top:14px; border-top:1px solid rgba(27,42,68,0.1);
+    display:flex; justify-content:space-between; gap:12px; font-size:13.5px; flex-wrap:wrap;}
+  .review .who strong{font-weight:600; color:var(--ink);}
+  .review .who span{color:var(--ink-soft);}
+  .review .job{font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--brick);}
+
   .about{background:var(--ink); color:var(--white);}
   .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
   .about h2{color:var(--white); font-size:clamp(28px,3vw,38px);}
@@ -293,6 +320,8 @@
   <div class="nav">
     <a href="#top" class="wordmark">JC <span>Painting</span></a>
     <div class="nav-right">
+      <a class="nav-link" href="#reviews" id="navReviews" hidden><span class="en">Reviews</span><span class="es">Reseñas</span></a>
+      <a class="nav-link" href="careers.html"><span class="en">Join the team</span><span class="es">Trabaja con nosotros</span></a>
       <div class="lang-toggle" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" class="active">EN</button>
         <button type="button" data-set-lang="es">ES</button>
@@ -418,6 +447,21 @@
   </div>
 </div>
 
+<section class="reviews" id="reviews" hidden>
+  <div class="wrap">
+    <div class="reviews-head">
+      <div class="section-head">
+        <span class="eyebrow"><span class="en">Reviews</span><span class="es">Reseñas</span></span>
+        <h2><span class="en">What homeowners say after the walkthrough.</span><span class="es">Lo que dicen los clientes después de la entrega.</span></h2>
+      </div>
+      <a class="btn btn-outline" id="reviewLink" href="#" target="_blank" rel="noopener" hidden>
+        <span class="en">Leave us a review</span><span class="es">Déjanos una reseña</span>
+      </a>
+    </div>
+    <div class="review-grid" id="reviewGrid"><!-- reviews injected by JS from the REVIEWS list --></div>
+  </div>
+</section>
+
 <section class="about">
   <div class="wrap">
     <div class="about-grid">
@@ -427,6 +471,7 @@
         <div class="rule"></div>
         <p><span class="en">JC Painting has been repainting and renovating homes across the Chicago area for more than two decades — thousands of jobs, from a single bedroom to a full gut remodel. Every project gets the owner's direct attention, from the first estimate to the final walkthrough.</span><span class="es">JC Painting lleva más de veinte años pintando y remodelando casas en el área de Chicago — miles de trabajos, desde una sola recámara hasta una remodelación completa. Cada proyecto tiene la atención directa del dueño, desde el primer estimado hasta la entrega final.</span></p>
         <p><span class="en">No job too small, no detail skipped.</span><span class="es">Ningún trabajo es demasiado pequeño, ningún detalle se pasa por alto.</span></p>
+        <p style="margin-top:22px;"><a href="careers.html" style="color:var(--sky); font-weight:600; text-decoration:none;"><span class="en">We're hiring painters and finishers →</span><span class="es">Estamos contratando pintores y acabadores →</span></a></p>
       </div>
       <div class="about-figure">
         <img src="images/about-van.jpg" alt="JC Painting service van">
@@ -507,6 +552,7 @@
         <span style="margin-left:10px;"><span class="en">Chicago area</span><span class="es">Área de Chicago</span></span>
       </div>
       <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+        <a href="careers.html"><span class="en">Careers</span><span class="es">Empleo</span></a>
         <a href="privacy.html"><span class="en">Privacy Policy</span><span class="es">Política de Privacidad</span></a>
         <a href="terms.html"><span class="en">Terms of Use</span><span class="es">Términos de Uso</span></a>
         <a href="tel:17738307277">(773) 830-7277</a>
@@ -525,6 +571,46 @@
   }
   buttons.forEach(b => b.addEventListener('click', () => setLang(b.getAttribute('data-set-lang'))));
   try { const saved = localStorage.getItem('jcp-lang'); if(saved) setLang(saved); } catch(e){}
+
+  // ---------- reviews ----------
+  // Paste real customer reviews here (copy them word-for-word from Google, Yelp, Nextdoor, etc.).
+  // The Reviews section stays hidden until at least one review is in this list.
+  // Fields: name (as the customer signed it), area (town/neighborhood, optional), job (optional),
+  //         stars (1-5), text (the review as written), source (optional, e.g. "Google").
+  const REVIEWS = [
+    // { name: "Customer name", area: "Town", job: "Interior painting", stars: 5, text: "Review text exactly as written.", source: "Google" },
+    { name: "Mariela S.", area: "Wheaton, IL",
+      text: "I recommend Jose and his team to all my family and friends. We have used him multiple times for big and little projects. He is a great advisor on how to best do the work and what’s needed and once work begins he’s punctual and communicates well. He is reliable, knowledgeable and does great work!" },
+    { name: "John D.", area: "Barrington, IL",
+      text: "I have used Jose and his team for multiple projects and the outcome is always the same: incredible! Everything has always been done on time and on budget, and looks absolutely perfect. Whether it’s painting rooms, stripping wallpaper, building walls, relocating electrical, etc. - he does phenomenal work and at a fantastic price compared to competitors. I will gladly continue to use him for all future project work around my home." },
+    { name: "Doug J.", area: "Park Ridge, IL",
+      text: "We have been working with Jose and his crew annually for many years now. The team is professional, meticulous and easy to work with. I have recommended them to my friends who have thanked me for doing so. If you need professional painting and related work done correctly at the right price, look no further." },
+  ];
+  // Link to your Google review page (Google Business Profile → "Ask for reviews"). Leave "" to hide the button.
+  const REVIEW_LINK = "";
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function renderReviews(list){
+    const section = document.getElementById('reviews');
+    const grid = document.getElementById('reviewGrid');
+    if(!list.length){ section.hidden = true; document.getElementById('navReviews').hidden = true; return; }
+    grid.innerHTML = list.map(r => {
+      const n = Math.max(0, Math.min(5, Math.round(r.stars || 0)));
+      const stars = n ? '★'.repeat(n) + '<span class="off">' + '★'.repeat(5 - n) + '</span>' : '';
+      const meta = [r.area, r.source].filter(Boolean).map(esc).join(' · ');
+      return `<article class="review">
+        ${stars ? `<div class="stars" aria-label="${n} out of 5 stars">${stars}</div>` : '<div class="mark" aria-hidden="true">“</div>'}
+        ${r.job ? `<div class="job">${esc(r.job)}</div>` : ''}
+        <blockquote>${esc(r.text)}</blockquote>
+        <div class="who"><strong>${esc(r.name)}</strong>${meta ? `<span>${meta}</span>` : ''}</div>
+      </article>`;
+    }).join('');
+    section.hidden = false;
+    document.getElementById('navReviews').hidden = false;
+    const link = document.getElementById('reviewLink');
+    if(REVIEW_LINK){ link.href = REVIEW_LINK; link.hidden = false; }
+  }
+  renderReviews(REVIEWS);
 
   // ---------- gallery data ----------
   const GALLERY = [
